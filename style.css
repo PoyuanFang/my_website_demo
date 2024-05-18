@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+TC&display=swap");
+
+/* font-family: 'Mukta', sans-serif; 
+font-family: 'Dosis';*/
+/* 電腦與平板上應用的樣式 */
+* {
+  /* 如果有空白區塊跑出來 */
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+
+body {
+  margin: 0px;
+  font-size: 14px;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* header區域 */
+.header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav li {
+  padding: 15px;
+  border-right: 0.5px solid black;
+  margin: 10px 0;
+}
+
+.primary-nav li:nth-child(4) {
+  border: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.logo {
+  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+  height: 50px;
+  text-align: center;
+  line-height: 30px;
+  transition: 0.25s ease-in-out;
+}
+
+.logo:hover {
+  font-size: 25px;
+}
+
+header a:hover {
+  font-weight: bold;
+}
+
+/* banner區域 */
+#banner {
+  /* background-image: url(./img/geadient_blue_工作區域\ 1.png); */
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("./img/geadient_blue_工作區域 1.png");
+}
+
+.circle1 {
+  width: 200px;
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  animation: animate1 10s ease-in infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    top: 0%;
+    left: 0%;
+    transform: rotate(90deg);
+  }
+
+  50% {
+    top: 20%;
+    left: 0%;
+    transform: rotate(180deg);
+  }
+
+  75% {
+    top: 10%;
+    left: 0%;
+    transform: rotate(270deg);
+  }
+
+  100% {
+    top: 0%;
+    left: 0%;
+    transform: rotate(360deg);
+  }
+}
+
+.slogan {
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  font-size: 48px;
+}
+
+/* about區域 */
+#about .container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatar {
+  width: 25%;
+  margin-top: 20px;
+}
+
+.description {
+  padding-bottom: 30px;
+  font-size: 18px;
+}
+
+/* 手機  螢幕寬度小於640px才會執行*/
+@media screen and (max-width: 640px) {
+  /* header區域 */
+  .menu-icon {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  header {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .primary-nav > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    border-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .primary-nav li:nth-child(4) {
+    border-bottom: 1px solid grey;
+  }
+
+  .primary-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    /* 如果上面有固定高度 */
+    height: auto;
+  }
+
+  /* banner區域 */
+  #banner {
+    height: 300px;
+  }
+
+  .slogan {
+    font-size: 24px;
+  }
+
+  /* about區域 */
+  #about .container {
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .avatar {
+    width: 50%;
+  }
+
+  .description {
+    padding-bottom: 30px;
+    font-size: 16px;
+  }
+
+  /* education區域 */
+  #education .container {
+    background-color: darkgrey;
+    padding: 10px, 0;
+  }
+}
